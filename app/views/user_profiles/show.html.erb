@@ -1,0 +1,22 @@
+<div class="card w-25">
+  <div class="card-header">
+   User Profile
+  </div>
+
+  <div class="card-body text-center">
+     
+      <div class="form-group">
+      		<img src="<%= current_user.user_profile.avatar %>" class="rounded user-picture">
+	  </div>
+
+	  <div class="form-group">
+      		<h4 class="no-margin"><%= current_user.user_profile.name %></h4>
+      		<b>Software Developer</b>
+      		<div class='address'>#<%= current_user.user_profile.primary_address %></div>
+      		<div><%= current_user.user_profile.primary_mobile %></div>
+	  </div>
+
+
+
+  </div>
+</div>

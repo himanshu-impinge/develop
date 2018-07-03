@@ -1,15 +1,19 @@
 <div class="container">
 
   <div class="starter-template text-center">
-    <h1>Welcome to Impinge</h1>
+  	<img src="<%= current_user.user_profile.avatar %>" class="rounded user-picture">
+    <h1>I'm <%= current_user.user_profile.name %> </h1>
     <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
     
+	<%= link_to "Profile", user_profile_path(current_user.user_profile), :class => 'btn btn-primary' %>
+	
     <% if user_signed_in? %>
 	 <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-danger' %>
 	<% else %>
 	 <%= link_to "Sign Up", new_user_registration_path, :class => 'btn btn-primary' %>
 	 <%= link_to "Login", new_user_session_path, :class => 'btn btn-primary' %>
 	<% end %>
+
 
   </div>
 
